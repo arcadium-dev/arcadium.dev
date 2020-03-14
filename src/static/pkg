@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="go-import" content="arcadium.dev/pkg git https://github.com/arcadium/pkg">
+  </head>
+  <body>
+    Redirecting to <a href="https://github.com/arcadium/pkg">github.com/arcadium/pkg</a>...
+  </body>
+</html>

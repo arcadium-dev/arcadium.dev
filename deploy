@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# Copyright (c) 2018, Ian Cahoon <icahoon@gmail.com>
+# All rights reserved.
+#
+
+set -euo pipefail
+
+declare src="${PWD}/src"
+declare dest="${PWD}/public"
+
+if [[ ! -d ${src} || ! -d ${dest} ]]; then
+  printf "Error: This must be run in the blog root directory. Exiting...\n"
+  exit 1
+fi
+
+declare -r esc=$'\033'
+declare -r title="${esc}[1;33m"
+declare -r clear="${esc}[0;39m"
+
+function build() {
+  printf "\n${title}Building site...${clear}\n"
+  rm -rf ${dest}/*
+  hugo -s ${src} -d ${dest}
+}
+
+function deploy() {
+  printf "\n${title}Deploying site...${clear}\n"
+  cd ${dest}
+  git add .
+  git commit -m "rebuilding site - $(date)"
+  git push origin master
+  cd ..
+}
+
+function main() {
+  build
+  if [[ "${1:-}" == "yes" ]]; then
+    deploy
+  fi
+}
+
+main "$@"

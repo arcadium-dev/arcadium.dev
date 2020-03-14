@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+
+declare src="./src"
+
+if [[ ! -d ${src} ]]; then
+  printf "Error: This must be run in the blog root directory. Exiting...\n"
+  exit 1
+fi
+
+hugo -s ${src} server --disableFastRender -D -w "$@"
