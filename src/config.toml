@@ -2,7 +2,7 @@ baseURL = "https://arcadium.dev"
 languageCode = "en-us"
 title = "arcadium.dev"
 theme = "hemingway2"
-copyright = "&copy; 2018-20, Ian Cahoon"
+copyright = "&copy; 2018-21, arcadium.dev"
 #summaryLength = 0
 
 [taxonomies]
@@ -20,7 +20,3 @@ languages = ["go", "dockerfile", "json", "bash"]
 [[params.social]]
 url = "https://github.com/arcadium-dev/"
 fa_icon = "fab fa-github"
-
-[[params.social]]
-url = "https://hub.docker.com/u/arcadium/"
-fa_icon = "fab fa-docker"
